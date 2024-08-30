@@ -1,0 +1,59 @@
+@startuml
+
+skin rose
+
+class Animal {
+  - name: String
+  - age: int
+  - weight: double
+  + Animal(wgt: double, nm: String, age: int)
+  + getName(): String
+  + getAge(): int
+  + getWeight(): double
+  + toString(): String
+}
+
+class Elephant extends Animal {
+  - country: String
+  + Elephant(nm: String, ct: String, age: int, wgt: double)
+  + getCountry(): String
+  + toString(): String
+}
+
+class Horse extends Animal {
+  - country: String
+  - topSpeed: double
+  + Horse(nm: String, ct: String, age: int, wgt: double, ts: double)
+  + getCountry(): String
+  + getTopSpeed(): double
+  + toString(): String
+}
+
+class Snake extends Animal {
+  - length: double
+  - venom: boolean
+  + Snake(nm: String, age: int, wgt: double, len: double, vn: boolean)
+  + getLength(): double
+  + isVenom(): boolean
+  + toString(): String
+}
+
+class Whale extends Animal {
+  - waterType: boolean
+  - maxDiveDepth: double
+  + Whale(nm: String, age: int, wgt: double, typ: boolean, mdd: double)
+  + isWaterType(): boolean
+  + getMaxDiveDepth(): double
+  + toString(): String
+}
+
+class Main {
+  + main(args: String[])
+}
+
+Animal <|-- Elephant
+Animal <|-- Horse
+Animal <|-- Snake
+Animal <|-- Whale
+
+@enduml
